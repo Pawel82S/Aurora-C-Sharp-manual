@@ -1,31 +1,133 @@
 \documentclass[../Aurora C# unofficial manual.tex]{subfiles}
 
 \begin{document}
-	Original post can be found
-	
-	%\newline\newline
 	\subsection{Meson update}
 	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg111663#msg111663}{here}.
+	\newline\newline
 	
-	%\newline\newline
+	Mesons have the following changes for C\# Aurora:
+	\begin{enumerate}
+		\item Their cost is based on the same principles as a laser, so mesons will cost the same as an equivalent laser of the same tech level.
+		\item Mesons penetrate shields as before but their ability to penetrate armour is now limited.
+		\item A new tech line exists, Meson Armour Retardation, which is the chance for each layer of armour to stop the meson. This starts at 50\%, then 40\%, 32\%, etc. finishing at 7\% for TL 12
+		\item If armour does stop the meson, it scores 1 point of damage on the armour.
+		\item If the meson hits a damaged armour location, it only has to penetrate the remaining armour in that location.
+		\item Mesons will destroy missiles without penalty, as missiles are no longer armoured in C\# Aurora.
+	\end{enumerate}
+	As with everything else, these changes are subject to play test.
+	
+	
 	\subsection{Turret update}
 	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg103323#msg103323}{here}.
+	\newline\newline
 	
-	%\newline\newline
+	A minor update. The benefits of multiple energy weapons in turrets have been doubled. A twin turret now has a 20\% reduction in crew vs two solo weapons and has a 10\% reduction in gear size. A quad turret has a 40\% reduction in crew vs four solo weapons and has a 20\% reduction in gear size.
+	
+	In addition, I found an error in the VB6 code for turret design that meant a turret needed four times more armour than a ship of equivalent size. This has been corrected for C\# Aurora, which means armoured turrets are now much more viable.
+	
+	
 	\subsection{Beam weapon recharge}
 	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg103586#msg103586}{here}.
+	\newline\newline
 	
-	%\newline\newline
+	In VB6, if a power plant is damaged, it slows down the recharge rate of all weapons by a proportionate amount.
+	
+	In C\# Aurora, power is allocated weapon by weapon until the available power is exhausted. This means that some weapons may not be recharged, but the others will be recharged at the maximum rate. Weapons are charged in order of ascending power requirement. Once a weapon is recharged, it will require no more power and other weapons can begin the recharge process.
+	
+	This should allocate power in the most effective way to keep a ship in the fight.
+	
+	
 	\subsection{Weapon failure}
 	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg107701#msg107701}{here}.
+	\newline\newline
 	
-	%\newline\newline
+	
+	At the point when any weapon (energy-based or missile launcher) fires, there is a 1\% chance the weapon will suffer a failure. If sufficient maintenance supplies are available, the weapon will be instantly repaired and will fire normally. If maintenance supplies are not available, the weapon will be damaged and unable to fire.
+	
+	This is partially to simulate the stress of combat on weapon systems, but also as a balance to other rule changes.
+	
+	
 	\subsection{Plasma carronades}
 	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg102669#msg102669}{here}.
+	\newline\newline
 	
-	%\newline\newline
+	
+	\begin{enumerate}
+		\item The development cost of Plasma Carronade focal size has been halved. For example, a 30cm Carronade is now 4000 RP.
+		\item The building cost of Carronades has also been halved.
+	\end{enumerate}
+	These two changes should make Carronades more viable. A powerful and inexpensive weapon but very short-ranged.
+	
+	
 	\subsection{Particle lance}
 	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg102678#msg102678}{here}.
+	\newline\newline
 	
-	%\newline\newline
+	This is a copy of a post in the VB6 7.2 Changes List. I didn't release the updated VB6 version so this is still a change from the released VB6 Aurora.
+	
+	The Particle Lance is a large, potentially devastating weapon that is variant of the Particle Beam.
+	
+	Once Particle Beam Range 200,000 km and Particle Beam Strength 6 have both been researched, the Particle Lance can be researched for 30,000 RP. The Lance is a modification of the normal Particle Beam and is an extra option in the design window.
+	
+	The Particle Lance modification affects the Particle Beam in the following ways:\\
+	2x Damage\\
+	2x Size\\
+	2x HTK\\
+	2x Crew\\
+	2.5x Power Requirement\\
+	3x Cost\\
+	2x Development Cost
+	
+	As well as the above modifications, which essentially creates a weapon twice as large, that recharges 2.5x more slowly and costs 3x as much, the damage template of the Particle Lance is a single column of armour, rather than the Particle Beam which has a template between that of missiles and lasers. The Particle Lance retains the constant damage of the Particle Beam, creating a weapon that can penetrate enemy armour at significant range.
+	
+	Here are examples of similar tech level Particle Beam, Particle Lance and Laser.\\\\
+	Particle Beam\\
+	Beam Strength 6 \space\space\space Rate of Fire: 15 seconds \space Maximum Range: 240,000 km\\
+	Particle Beam Size: 8 HS \space\space\space Particle Beam HTK: 4\\
+	Power Requirement: 15 \space\space\space Power Recharge per 5 Secs: 5\\
+	Cost: 94 \space\space\space Crew: 24\\
+	Materials Required: 18.8x Duranium  18.8x Boronide  56.4x Corundium\\
+	Development Cost for Project: 2250RP\\\\
+	Particle Lance\\
+	Beam Strength 12 \space\space\space Rate of Fire: 38 seconds \space\space\space Maximum Range: 240,000 km\\
+	Particle Beam Size: 16 HS \space\space\space Particle Beam HTK: 8\\
+	Power Requirement: 38 \space\space\space Power Recharge per 5 Secs: 5\\
+	Cost: 282 \space\space\space Crew: 48\\
+	Lance Weapon\\
+	Materials Required: 56.4x Duranium  56.4x Boronide  169.2x Corundium\\
+	Development Cost for Project: 4500RP\\\\
+	25cm Far Ultraviolet Laser\\
+	Damage Output 16 \space\space\space Rate of Fire: 20 seconds \space\space\space Range Modifier: 5\\
+	Max Range 800,000 km \space\space\space Laser Size: 8 HS    Laser HTK: 4\\
+	Power Requirement: 16 \space\space\space Power Recharge per 5 Secs: 5\\
+	Cost: 100 \space\space\space Crew: 24\\
+	Materials Required: 20x Duranium  20x Boronide  60x Corundium\\
+	Development Cost for Project: 1000RP\\
+	(laser will have 320,000 km range with equivalent tech level fire control)
+	
+	\begin{center}
+		\begin{tabular}{|l|r|}
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Comparison of Damage Templates at 240,000 km}} \\
+			\hline
+			Particle Beam (6) & 2, 3, 1 \\
+			\hline
+			Particle Lance (12) & 12 \\
+			\hline
+			Laser (3) & 3 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	Two Particle Beams or 25cm Lasers can be installed in the same hull space as the Particle Lance. The Lasers are devastating at close range, the Particle Beams inflict more damage at long range (in terms of DPS), while the Particle Lance penetrates much more armour at long range.
+	
+	The Particle Lance is intended as a powerful anti-ship weapon that requires a large investment in a particular tech line, lacks the flexibility of lasers or railguns and provides a different armour penetrating option to mesons, although mesons are still superior against shields. Mainly though it is to boost the Particle Beam as a serious weapon choice.
+	
+	The Particle Lance is not tested under normal battle conditions yet so I may change it a little after play-testing.
 \end{document}
