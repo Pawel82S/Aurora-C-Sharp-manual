@@ -1,18 +1,18 @@
 Weapons/Missiles:
 
-Missile Engines Integrated into Missile Design
-Tracking Time Bonus vs Missiles
+Missile Engines Integrated into Missile Design (X)
+Tracking Time Bonus vs Missiles (X)
 
 
 =======================================================================
 Ground Forces:
 
-Alien Ground Unit Intelligence
-Base Ground Combat Rules
-Ground Combat Events
-Ground Combat Hostile Force Intelligence
-Ground Commander Bonuses
-Ground Force Fortification
+Alien Ground Unit Intelligence (X)
+Base Ground Combat Rules (X)
+Ground Combat Events (X)
+Ground Combat Hostile Force Intelligence (X)
+Ground Commander Bonuses (X)
+Ground Force Fortification (X)
 Ground Force Logistics
 Ground Forces Construction Complex
 Ground Forces Detection

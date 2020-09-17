@@ -1,0 +1,18 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\subsection{Tracking time bonus vs missiles}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg115708#msg115708}{here}.
+	\\\\
+	
+	Energy weapons and beam fire controls engaging missiles can gain a bonus to their tracking speed based on how long the missile has been on active sensors. Similar functionality was added to VB6 but is not working. The benefit of this has been toned down a little from the planned functionality in VB6 as fuel considerations in C\# will reduce the max boost used for anti-ship missiles and avoid the late game missile speed vs tracking speed disparity.
+	
+	The gain in tracking speed is equal to one percent for every five seconds a missile is continually tracked by active sensors. This is subject to a maximum time based on the associated tracking time tech. The starting tech costs 1000 RP and adds tracking bonus for the first 30 seconds. The tech name format is: Max Tracking Time for Bonus vs Missiles: 30 Seconds (6\%)
+	
+	This time increases with subsequent tech to 45, 60, 80, 120, 160, 200, 250, 320 and 400. Each tech is approximately double the cost of the previous one.
+	
+	Note this is a bonus to tracking speed, not the base to-hit chance. If the tracking speed is already higher than the missile speed, this bonus will not improve the chance to hit.
+	
+	I considered adding this to all energy-weapon fire for consistency, but decided it was reasonable to keep it to missiles only, given their more predictable courses.
+\end{document}
