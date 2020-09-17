@@ -1,0 +1,81 @@
+Weapons/Missiles:
+
+Missile Engines Integrated into Missile Design
+Tracking Time Bonus vs Missiles
+
+
+=======================================================================
+Ground Forces:
+
+Alien Ground Unit Intelligence
+Base Ground Combat Rules
+Ground Combat Events
+Ground Combat Hostile Force Intelligence
+Ground Commander Bonuses
+Ground Force Fortification
+Ground Force Logistics
+Ground Forces Construction Complex
+Ground Forces Detection
+Ground Forces Replacements
+Ground Forces Text Summary
+Ground Formation Element Transfer UI
+Ground Support Bonus
+Ground Support Fighters
+Ground-based AA Fire
+Ground-based Geological Survey
+Ground-based Xenoarchaeology
+Naval Bombardment of Ground Forces in Naval Combat Phase
+Queued Ground Formation Training Tasks
+Setting Ground Formation Support
+Surface to Orbit Ground Forces Contact
+Surface-to-Orbit Weapons
+
+
+=======================================================================
+Fleets:
+
+Fleet Distance and Time
+Fleet Escort Orders
+Fleet Maximum Speed
+Fleet Movement Auto Route
+Fleet Order Templates
+Fleet Training
+Fleets as Text
+Land on Assigned Mothership as Sub-FleetMove Fleet to Waypoint
+Standard transits by Fleets with Commercial and Military Ships
+
+
+=======================================================================
+Ships:
+
+Assigned Mothership Display
+Assignment of Ships to Populations
+Naming Options for Ships
+Resupply from Stationary Supply Ship
+Ship Achievements
+Ship Class Components View
+Ship Commander Rank
+Ship Ordnance Templates
+Ship Thermal Signature
+Shipbuilding Changes
+Tractor Any Ship
+
+
+=======================================================================
+Research:
+
+Automatic Research
+Change Scientist Research Field
+Gauss Cannon Research Changes
+Logistics and Ground Combat Research
+Researching Prototypes
+
+
+=======================================================================
+Civilians:
+
+Civilian Destinations
+Civilian Mining Colonies
+Civilian Movement Restrictions
+Civilian Movement of Installations
+Civilian Trade

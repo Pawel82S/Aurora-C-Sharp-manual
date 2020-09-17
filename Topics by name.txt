@@ -1,0 +1,264 @@
+A
+
+Abandon Overhaul
+Academy Commandants
+Adding Your Own Commander Name Themes
+Adding Your Own Naming Themes
+Admin Commands
+Aether Rifts
+Alien Classes Text Summary
+
+Alien Weapon Detection
+Ancient Constructs
+Armour Damage Templates
+Assign New Labs
+
+Auto Refit Tasks
+Auto-Assignment of Naval Commanders
+Automated Assignment for Colony Governors
+Automated Medal Awards
+Automatic Pop Selection from Galactic Map
+
+
+B
+
+
+Battlestar Greek Commander Name Theme
+Boarding Combat
+
+C
+
+Cargo Shuttle Bays
+Chance of Ruins
+
+Change to Maintenance Facility Cost
+
+Collateral Damage
+Colony Cost
+Colony Cost of Comets
+Colony Governors
+Combat Reports
+Combination Orders
+Command & Control Rules
+Commander Assignment Priority
+Commander Careers
+Commander Name Themes
+Commercial Hangars
+Commercial Magazines
+Communication Attempts
+Continual Capacity Upgrade Target
+Conventional Armour
+Conventional Industry
+Conventional Start
+Create New Lagrange Points
+Crew Grade
+Crew Morale
+Cycle Previous Locations
+
+D
+
+Damage Control
+Delete Empty Colonies
+Deployment Exceeded Condition
+Deployment, Overcrowding, Under-manning and Life Support Failures
+Detecting Engine Type
+Distance Measuring
+Dust Mechanics
+
+E
+
+Earth Death Spiral
+Electronic Intelligence Gathering
+Engine HTK
+Engine Size and Fuel Consumption
+Engine Technology Progression
+Escort Orders
+
+F
+
+Faster Save
+Fighter Pods and Fighter Pod Bays
+Final Defensive Fire Changes
+Fire Delay
+
+Flight Crew Berths
+Forced Labour Camps
+Fuel Storage Costs
+Future Tech for Prototypes
+
+G
+
+
+Genetic Modification Centre
+Genetically Enhanced Soldiers
+Governors
+Greenhouse Gas and Dust Mechanics
+
+Group Contacts
+
+H
+
+Hot Keys
+Human NPRs
+
+I
+
+Installations without Required Tech
+Interrogation of Survivors
+Interrupts for Active Weapons
+
+J
+
+Jump Drive Size Requirements
+Jump Point Stabilisation
+Jump Point Transit Shock
+
+K
+
+Known Stars Changes
+
+L
+
+Lagrange Points for Moons
+Launch Ready Ordnance
+
+Linked Windows
+Load & Unload Cargo
+Load All Minerals Until Full
+Logistics Bonus
+Logistics Reports
+
+Lost Contacts
+Low Gravity Infrastructure
+
+M
+
+Maintenance Locations View
+Maintenance Storage Bays
+Manual Medal Awards
+Manufacturing Sector
+Maximum Engine Power Modifier
+Maximum Wealth Balance
+Medal Import
+Mineral Search Flag
+Mineral Search Window
+Minerals for Maintenance Supplies
+Minimum Fuel and Supply
+Mining Company Names
+
+Missile Launch Detection
+
+Multiple Window Instances
+Multiple Window Option
+
+N
+
+
+Naming Themes
+
+Naval Organization
+New Active Sensor Model
+New Game Settings
+New Maintenance Rules
+New Passive Sensor Model
+New Species Attributes
+New Spoiler Race
+Non-Player Race Fuel
+Non-Support Fighter Missions
+
+O
+
+Occupation Strength and Police Modifiers
+Orbital Bombardment Support
+Orbital Habitats
+Orbital Mining Modules
+
+P
+
+Pickup Nearest Lifepod
+Planet X in the Sol System
+Planetary Installations
+Planetary Terrain
+Player Race Banned Bodies
+Point Defence Fire Control
+Population Capacity
+Populations as Text
+Potential Colony Locations
+Power Plant Changes
+Prototype Components
+
+Q
+
+
+
+R
+
+Race Comparison Window
+Rakhas Generation Change
+Reaction Bonus
+Recovering Technology and Ship Components from Ruins
+Refit Size
+Refuelling Changes
+Refuelling Orders
+Removal of Planetary Defence Centres
+Repair Task In Shipyards Window
+Repeat Orders X Times
+
+Resupply Changes
+
+Refuel, Resupply and Overhaul
+Ruins in Sol
+
+S
+
+Salvage in Orbit
+Save Button
+Screen Resolution
+
+Shield Generators
+
+Shipping Line Earnings and Tax
+Shipping Line Names
+Shipping Lines
+Shipyard Worker Requirements
+Shock Damage Update
+Sol System Changes
+Space Stations
+Spacemaster Changes to Installations
+
+Standing Order for Unload Colonists
+Standing Orders
+Starting Build Points
+Starting Financial Centres
+Starting NPR Locations
+Story Characters
+Structural Shells
+
+Surrender
+Survey Next Three Bodies or Locations
+Survey Site List
+Survey Speed
+System Naming
+System OOB
+
+T
+
+Tactical Map Events-1
+Tactical Map Events-2
+Tactical Map Popup Menu
+Tactical Map in Background
+Terraforming Update
+
+
+Trade Good Modifiers
+Transponders
+
+U
+
+Unused Construction Capacity
+
+W
+
+Waypoints
+Wealth Generation
+Worker Requirements
