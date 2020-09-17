@@ -1,0 +1,70 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Intrusion into NPR territory}\label{2_intrusion_into_npr}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg118318#msg118318}{here}.
+	\\\\
+	
+	In each construction phase, each NPR will determine a value for each known system. In order of ascending importance, the values are: Alien Controlled, Neutral, Claimed, Secondary, Primary, Core, Capital. The value is calculated on a number of different factors, including existing population and installations, whether it is a logistics node, mining potential, terraforming potential and proximity to other important systems. Neutral is the default state for a system in which the NPR has no current interest, while Alien Controlled is a system which the NPR acknowledges is in the territory of another race as a result of accepting a claim from that race (see section \ref{3_claiming_npr_systems}).
+	
+	If you have forces or a population in a system that has at least Secondary value to an NPR, you are detected and you are currently viewed as neutral or friendly, the NPR will issue a warning which will appear as an event. This will still happen even if you haven't detected any NPR forces. You will be notified which fleet or population received the message. If communication has not been established, you will receive notification of an „unintelligible communication of unknown origin”. If you have established communication, the text will reflect the severity of the situation.
+	
+	This communication can be as mild as a suggestion that your forces leave in the near future and as strong as demanding you depart immediately or be fired upon. There are five levels of severity for messages and the one chosen by the NPR primarily depends on the 'Threat Level' (see below), although it may also issue a stronger warning at lower threat levels if the NPR believes that war will soon follow without a player withdrawal.
+	
+	The threat level is based on three factors; the NPR’s estimate of the value of the system, any status modifiers due to the existing diplomatic relations and the Xenophobia of the NPR. This is calculated as follows:
+	\[ Threat Level = Base Threat Level * Status Modifier * \frac{Racial Xenophobia}{100} \]
+	\begin{center}
+		\begin{tabular}{|l|r|}
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Base Threat Level}} \\
+			\hline
+			Secondary & 2.5 \\
+			\hline
+			Primary & 5 \\
+			\hline
+			Core & 10 \\
+			\hline
+			Capital & 20 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\textbf{Status Modifiers:}\newline
+	Friendly Status = 0.5\newline
+	Neutral with Diplomatic Points >= 1\newline
+	Neutral with Diplomatic Points < 0 = 2\newline
+	
+	In addition to the messages, the threat levels generate a negative impact on diplomatic relations. The penalty in diplomatic points for intrusion into NPR territory is based on the Threat Level above plus the ships and population that the NPR can detect. The calculation for the annual point penalty is as follows:
+	\[ DPP\footnote{DPP - Diplomatic Point Penalty} = \sqrt{Total Detected Ship Tonnage + Total Detected Population EM Signature * 10 * Threat Level} \]
+	
+	Each construction phase, the diplomatic penalty applied is equal to the annual penalty multiplied by \( \frac{Construction Phase Length}{Year} \)
+	
+	Shipping Line vessels will be ignored for this purpose if a trade treaty is in force. NPRs will treat ships without military engines that have not demonstrated any weapon capability as 10\% of their normal tonnage. If at least one ship is detected, the minimum rating for Detected Ship Tonnage will be 1000 tons. If at least one population is detected, the minimum rating for Population EM Signature will be 100. NPRs deduct 10,000 tons from the tonnage of one Diplomatic Ship (see section \ref{8_diplomatic_ships}) per system for threat purposes if that class type has never fired weapons and the Diplomatic Ship is in a non-Core system. If the NPR only has one system, it is not treated as core for this purpose.
+	
+	This table shows the diplomatic point penalties for different ship tonnages in different value systems, assuming an NPR Xenophobia of 50. For populations, use EM Signature * 10 for ‘Tonnage’.
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			\multicolumn{2}{|c}{}  & \multicolumn{4}{|c|}{\textbf{Annual Diplomacy Penalty}} & \multicolumn{4}{c|}{\textbf{Construction Phase Penalty}}  \\
+			\hline
+			\textbf{Tonnage} & \( \sqrt{\textbf{Tonnage}} \) & \textbf{Secondary} & \textbf{Primary} & \textbf{Core} & \textbf{Capital} & \textbf{Secondary} & \textbf{Primary} & \textbf{Core} & \textbf{Capital} \\
+			\hline
+			1000 & 31.6 & 39.5 & 79.1 & 158.1 & 316.2 & 0.5 & 1.1 & 2.2 & 4.3 \\
+			\hline
+			3000 & 54.8 & 68.5 & 136.9 & 273.9 & 547.7 & 0.9 & 1.9 & 3.8 & 7.5 \\
+			\hline
+			10000 & 100.0 & 125.0 & 250.0 & 500.0 & 1000.0 & 1.7 & 3.4 & 6.8 & 13.7 \\
+			\hline
+			30000 & 173.2 & 216.5 & 433.0 & 866.0 & 1732.1 & 3.0 & 5.9 & 11.9 & 23.7 \\
+			\hline
+			100000 & 316.2 & 395.3 & 790.6 & 1581.1 & 3162.3 & 5.4 & 10.8 & 21.7 & 43.3 \\
+			\hline
+			300000 & 547.7 & 684.7 & 1369.3 & 2738.6 & 5477.2 & 9.4 & 18.8 & 37.5 & 75.0 \\
+			\hline
+			1000000 & 1000.0 & 1250.0 & 2500.0 & 5000.0 & 10000.0 & 17.1 & 34.2 & 68.5 & 137.0 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	The warning message is issued during the first construction phase after detection and repeated during each subsequent construction phase where the violation still exists. Allied Races do not receive warnings as they can freely enter the NPR territory. Hostile races do not receive warnings as they are attacked instead. Trading will allow some exceptions to the rules above and I'll cover that in a future post. I will also cover situations where the NPR considers claiming a system with a large existing player population in the 'Alien Controlled' update.
+\end{document}

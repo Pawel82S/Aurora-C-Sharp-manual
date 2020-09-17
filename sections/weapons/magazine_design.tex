@@ -1,0 +1,18 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+		\subsection{Magazine design}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg107372#msg107372}{here}.
+	\\\\
+	
+	There are several changes to magazine design for C\# Aurora.
+	\begin{itemize}
+		\item The 'ejection' tech line has been replaced by the Magazine Neutralisation System. It is functionally identical but in technobabble terms this is a system design to render missile warheads permanently inert in the event of damage to the magazine.
+		\item Magazines have a base HTK number equal to the square root of their size (rounded down). in VB6 Aurora, all magazines have a base HTK of 1, regardless of size. It is still possible to add extra HTK in C\# by sacrificing internal space.
+		\item The explosion chance for a magazine is divided by the square root of its size. For example, if a size 1 magazine has a base explosion chance of 15\%, the equivalent tech size 5 has an explosion chance of 6.71\%, the size 10 is 4.74\% and the size 20 is 3.35\%.
+		\item If the ship has a Chief Engineer, any explosion chance (for magazines or engines) is reduced by his Engineering Bonus. So a 5\% explosion chance would be reduced to 3.5\% by a Chief Engineer with an Engineering bonus of 30\%.
+		\item When a magazine is hit, a proportion of the remaining ordnance will be destroyed (based on\\ \( Destroyed Magazine Capacity / Total Ship Magazine Capacity \)). Any destroyed ordnance will explode with its full warhead strength.  In VB6, only ordnance beyond the remaining magazine capacity explodes and only at 20\% strength.
+	\end{itemize}	
+	In summary, magazine explosions in C\# Aurora will be much rarer, especially for larger ships, but far more devastating when they do occur.
+\end{document}

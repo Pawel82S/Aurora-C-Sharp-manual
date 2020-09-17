@@ -1,0 +1,52 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\subsection{Missile engines}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg102804#msg102804}{here}.
+	\\\\
+	
+	In C\#, Missile Engines follow the same size-based fuel consumption rules as Ship Engines using the formula:
+	\[ Fuel Consumption = \sqrt{\frac{10}{Engine Size in HS}} \]
+	
+	The above increases the fuel consumption of missile engines based on size alone. However, VB6 also had a flat x5 multiplier for the overall fuel consumption for missile engines as they were treated as a different engine type than ship engines. As C\# is aiming for consistency between ship and missile engines, this x5 multiplier cannot remain as it was before. Removing the x5 multiplier entirely would cancel out the fuel consumption increase resulting from the changes in the size-based fuel consumption calculation. As one of the objectives of C\# is a reduction in missile ranges, a new rule is required that increases fuel consumption but that is still consistent with ship engines.
+	
+	Therefore, the calculation for fuel consumption based on boosting engines will now include an additional multiplier if the boost being used is higher than the maximum racial boost tech. Only missile engines have the capability to use higher boosts than the racial maximum, so this still allows consistency between ship and missile engines in the spectrum where they both operate. Once you move outside of the boost range possible for ships, additional fuel consumption can be added without breaking consistency. This rule adds a linear multiplier from 1x to 5x depending on the level of boost beyond the racial maximum. The formula is as follows:\\
+	
+	if \( Boost Used > Max Boost Multiplier Tech \) then
+	\[ High Boost Modifier = \frac{Boost Used - Max Boost Multiplier Tech}{Max Boost Multiplier Tech} * 4 + 1 \]
+	
+	So if a race has Max Boost Tech of 2x, any missile with a Boost Level of 2x or less will use the standard boost fuel modifier calculation of \( Boost Level^{2.5} \).
+	
+	Above a Boost Level of 2x, the linear High Boost Modifier will come into effect, reaching a maximum of 5x fuel consumption at 4x Boost Level.
+	
+	Here is a comparison between VB6 and C\# using MPD engines and an engine size of 1 MSP. The Max Boost Tech for this race is 2x:\\\\
+	VB6 Missile Engine with 2x Boost\newline
+	Engine Power: 1.6 \space\space\space Fuel Use Per Hour: 81.51 Litres\\
+	Fuel Consumption per Engine Power Hour: 50.944 Litres\\
+	Engine Size: 1 MSP \space\space\space Cost: 0.4\\
+	Thermal Signature: 1.6\\
+	Materials Required: 0.4x Gallicite\\
+	Development Cost for Project: 80RP\\\\
+	C\# Missile Engine with 2x Boost
+	Engine Power 1.60 \space\space\space Fuel Use Per Hour 76.8 Litres\\
+	Fuel Consumption per Engine Power Hour 48.0 Litres\\
+	Size 1.00 MSP (2.5 tons) \space\space\space Cost 0.80\\
+	Development Cost 80 RP\\\\
+	Materials Required\\
+	Gallicite  0.80\\\\
+	VB6 Missile Engine with 4x Boost\\
+	Engine Power: 3.2 \space\space\space Fuel Use Per Hour: 922.18 Litres\\
+	Fuel Consumption per Engine Power Hour: 288.182 Litres\\
+	Engine Size: 1 MSP \space\space\space Cost: 0.8\\
+	Thermal Signature: 3.2\\
+	Materials Required: 0.8x Gallicite\\
+	Development Cost for Project: 160RP\\\\
+	C\# Missile Engine with 4x Boost\\
+	Engine Power 3.20 \space\space\space Fuel Use Per Hour 4344.5 Litres\\
+	Fuel Consumption per Engine Power Hour 1357.6 Litres\\
+	Size 1.00 MSP (2.5 tons) \space\space\space Cost 1.60\\
+	Development Cost 160 RP\\\\
+	Materials Required\\
+	Gallicite  1.60
+\end{document}

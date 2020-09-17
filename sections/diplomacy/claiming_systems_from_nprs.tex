@@ -1,0 +1,92 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Claiming systems from NPRs}\label{3_claiming_npr_systems}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg118362#msg118362}{here}.
+	\\\\
+	
+	In the same way that NPRs can warn players to leave a system, a player can warn an NPR. On the Intelligence and Foreign Relations window, there is a tab for Known Systems for each NPR. You can select a system and then set a 'Protection Status' for the selected system in connection with the selected NPR. Alternatively, you can set a protection status for the system on the galactic map and that status will be set for any alien race when they are first detected in the system. The six statuses are shown below with their ‘Demand Number’ (0-5) and their ‘Demand Strength’.
+	
+	\begin{center}
+		\begin{tabular}{|l|l|}
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Protection Status}} \\
+			\hline
+			0 & No Protection: 0 \\
+			\hline
+			1 & Suggest Leave: 1 \\
+			\hline
+			2 & Request Leave: 1.41 \\
+			\hline
+			3 & Request Leave Urgently: 1.73 \\
+			\hline
+			4 & Demand Leave: 2 \\
+			\hline
+			5 & Demand Leave with Threat: 2.24 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	
+	If you set a status for a specific combination of system and NPR, then if that NPR is detected by you in that system during a construction phase it will be informed of your demand unless it is already allied or hostile.
+	
+	The impact of the message on the NPR decision to accept or reject your demand is shown by the ‘Demand Strength’ in the list above, which is the square root of the ‘Demand Number’. A Request is 41\% more likely to work than a Suggestion, while a Demand with Threat is 2.24x more effective than a Suggestion. The Demand Value represents the idea that, from the perspective of the NPR, the forcefulness of your language may represent a willingness to use force.
+	
+	While the strength of your demand plays a part in the NPR decision, it also has a significant effect on relations with that NPR. So a higher demand might increase the chance the NPR will leave, but it also increases the chance of starting a war. If you demand the NPR leaves a system it doesn't care about you will cause fairly minor damage, but you could have made a polite request and it may have left with hardly any impact on relations. If you demand an NPR abandons what it regards as a primary system, that might work if you have a significant military advantage and the NPR is aware of it, but it might also cause the NPR to open fire immediately.
+	
+	\begin{center}
+		\begin{tabular}{|r|l|}
+			\hline
+			\multicolumn{2}{|c|}{\textbf{System Values}} \\
+			\hline
+			Neutral & 1 \\
+			\hline
+			Claimed & 2 \\
+			\hline
+			Secondary & 3 \\
+			\hline
+			Primary& 4 \\
+			\hline
+			Core & 5 \\
+			\hline
+			Capital & 6 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	This relationship impact is equal to
+	\[ Impact = Demand Number^{2} * System Value^{2} * \frac{Xenophobia}{50} \]
+	So a demand to leave a primary system would have the impact of \( 256 * Xenophobia / 50 \), while a request to leave a claimed system would have an impact of only \( 16 * Xenophobia / 50 \).
+	
+	The demand will be rejected if the NPR has not detected populations of your race with a total EM signature of \( 10 * Xenophobia \) or more. The NPR will base this on actual populations, not currently detected populations, as it is assumed you will provide the necessary evidence to back up your demand.
+	
+	Otherwise, the demand will be accepted based on Demand Value plus the following additional factors:
+	
+	\textbf{Accessible System Value}\\
+	For each system that would no longer be accessible if the claim was accepted, including the target system, a value is assigned equal to \( System Value^{2} / 4 \). For example, a Claimed system is worth 1, a Secondary system is worth 2.25, a Primary system is worth 4, etc. Each individual system value is calculated first and then the results are summed.
+	
+	\textbf{Military Advantage}\\
+	This assessment depends on the total size of your military forces that have been detected by the NPR during the last five years in comparison to its own (with an assumption of some as-yet-unseen forces) and its assessment of relative technology based on its observation of your ships. I don't want to go into too much detail on the Player Military Advantage, but if the NPR believes the racial balance of forces is equal, Player Military Advantage will be equal to 1. For the NPR to believe you have an advantage, it will need to see some firepower. This is based on total known forces, not local known forces, so generating a high Military Advantage number is difficult unless you show off a large portion of your forces. You won't be able to simply send in a survey ship and ask the NPR to move out
+	
+	\textbf{Population Factor}\\
+	This is equal to:
+	\[ Factor = \sqrt{\frac{Total EM Signature of Player Populations in System}{Total EM Signature of NPR Populations in System}} \]
+	However, this factor can never be higher than the fourth root of \( Total EM Signature of Player Populations in System / 100 \). For example, if the player had 1000 EM Signature and the NPR has 200 EM Signature, the factor would be 1.78 (because the fourth root of (1000/100) is lower than \( \sqrt{1000 / 200} \). This is to limit the advantage when the populations are relatively small or the NPR has no populations. Population Factor is the best ’peaceful option’ as demonstrating a large population is much more likely to achieve a decision in your favour.
+	
+	\textbf{Resistance}\\
+	\[ Resistance = \frac{(Xenophobia + Militancy + Determination)}{150} \]
+	If the NPR has low militancy, low determination and low xenophobia, it will be much easier to push around, and vice versa. This is difficult to assess because it is an unknown factor.
+	
+	If
+	\[ Military Advantage * Demand Value * Population Factor > Accessible System Value * Resistance \]
+	the NPR will accept the claim.
+	
+	For example, if the NPR has militancy, determination and xenophobia all at 50, then the value to overcome for a Secondary system is 2.25. If there are no populations and you use ‘Demand Leave’ which is worth 2x, you will need a Military Advantage greater than 1.125. Making this demand will cause a negative relationship impact of \( 4^{2} * 3^{2} * (50/50) = 144 \). If you have a significant advantage in population in the system, then you require a smaller military advantage or can use a lesser demand.
+	
+	If the NPR rejects your demand to withdraw, the protection status for that system for that NPR is reset to No Protection, so that further diplomatic penalties are not incurred. If you want to re-instate the demand (at whatever level), it will generate a new penalty.
+	
+	If the NPR decides it must withdraw based on its assessment of the situation, it will evacuate its ships and transfer any colonies to your control. These will start at a status of Occupied. The system will be set to 'Alien Controlled' (Player controlled) from the perspective of the NPR and it will ignore the system when deploying forces. This will change if conflict breaks out.
+	
+	Note that the player vs NPR and NPR vs player functionality for claiming systems are a little different. Both sides can send messages to each other and the types of messages are effectively the same. The difference is the method of delivery and the potential reaction. This is because I wanted to give the player maximum flexibility in Diplomacy, while still proving a structured approach for the NPR. For example, the player view of the NPR in terms of diplomatic points does not drop if the NPR ignores demands to leave. The player can decide whether it is necessary to go to war.
+\end{document}

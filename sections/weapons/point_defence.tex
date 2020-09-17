@@ -1,0 +1,14 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\subsection{Point defence}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg107268#msg107268}{here}.
+	\\\\
+	
+	In C\# Aurora, fire controls set to 'Final Defensive Fire' or 'Final Defensive Fire (Self Only)' will fire on hostile missiles, regardless of whether the fire control is set to 'Open Fire'. Fire controls set to Area Mode or for AMMs will only fire defensively when that fire control is set to 'Open Fire'.
+	
+	When a missile reaches its target, a target ship will use its CIWS first. If that is insufficient, it will use any weapons linked to fire controls set to 'Final Defensive Fire' or 'Final Defensive Fire (Self Only)'. If that is still insufficient, ships or the same race or an allied race with fire controls set to 'Final Defensive Fire' will be checked in increasing order of distance from the target ship.
+	
+	A target population will use any ground units assigned to point defence to shoot at incoming missiles. If that is insufficient, the same process as for ships will take place, checking same race or allied ships within point defence range of the planet.
+\end{document}

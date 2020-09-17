@@ -1,0 +1,26 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Banned bodies}\label{7_banned_bodies}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg119432#msg119432}{here}.
+	\\\\
+	
+	If a non-spoiler NPR has a relationship of neutral or higher with another race, it will generally avoid approaching 'banned bodies'.
+	
+	An NPR will decide for itself which bodies are banned, but in general these will include:
+	\begin{enumerate}
+		\item Bodies that have an alien race population of approximately ten million or more
+		\item Bodies that are moons of any bodies in (1)
+		\item Bodies that are moons and share the same parent body as any body in (1)
+		\item Bodies on which the NPR already has a population will be exempt from the above rules
+	\end{enumerate}
+	
+	NPRs will not create populations on banned bodies and will not attempt to conduct geological surveys on those bodies. The NPR will not generate points of interest within a few million kilometres of banned bodies. It is still possible that NPR ships will approach due to other considerations, such as moving between two points unrelated to banned bodies, but in general this should prevent the VB6 situation of NPR battle fleets making port visits to your home world.
+	
+	The banned bodies list is updated at game launch and during each construction phase. Banned bodies do not exist for populations of races with which the NPR has a hostile relationship. If there are two populations on a planet, one of which is hostile to the NPR and one neutral, the body will not be banned.
+	
+	For example, in the Space 1889 campaign, the Martians will generally avoid Venus, Earth, Luna, all the moons of Jupiter and all the moons of Saturn. They will still survey the Trojan asteroids and they still may pass close to the banned bodies when on an unrelated mission.
+	
+	\textbf{NOTE:} \textit{I looked at various ways of applying this in reverse. The NPR would generate a list of important planets and check for player race ships within a certain range, perhaps ten million kilometres. If they were detected, that would trigger a response, even if the NPR would otherwise not object to the player being in the system. The problem is that the player would have to be checking each ship path to ensure that didn't happen. I even added code to avoid this problem by only flagging player ships that remained within ten million in two consecutive construction phases, but even that is not foolproof. Essentially, the player knows the NPRs is trying to avoid his populations and will react to NPR movements accordingly, but understanding that is much more difficult for the AI. In the end the game play benefit is outweighed by the considerable micro-management required on the part of the player, or by the amount of code that would be needed to avoid accidentally passing through restricted zones. In most situations, the player would want to avoid being detected anyway so this situation would usually only be relevant where a truce countdown is in effect and the player and the NPR share the same home system. The player can RP that situation if needed.}
+\end{document}

@@ -1,0 +1,44 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\subsection{Ordnance transfer orders}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg104196#msg104196}{here}.
+	\\\\
+	
+	With the new ordnance transfer rules, I am changing how some of the ordnance transfer orders work.
+	
+	The first major change is that a collier within a fleet can be set to automatically transfer ordnance to or from other ships in the fleet. You can flag a collier as being at one of seven ordnance transfer statuses; None, Load Fleet, Replace Fleet, Remove Fleet, Load Sub-Fleet, Replace Sub-Fleet, Remove Sub-Fleet.
+	
+	When this flag is set to Load Fleet or Load Sub-Fleet, each collier will load ordnance into the magazines of non-colliers within its own fleet (or sub-fleet) as that fleet continues with its normal orders (the transfer itself is not an order). Essentially, the collier will keep the fleet's magazines topped up. The rate of ordnance transfer will be based on the ordnance transfer system of the collier multiplied by the parent race's underway replenishment tech (unless the fleet is stationary). The missiles being loaded will be based on what is missing from the ship's magazine when compared to the class loadout, starting with the largest missiles first (although smaller missiles will be loaded if there is insufficient time in the sub-pulse to load a larger one). However, missiles will only be added using this order and missiles that do not match the current class loadout will not be removed.
+	
+	When this flag is set to Replace Fleet or Replace Sub-Fleet, each collier will remove any missiles that do not match the current class loadout and replace them with those from the class loadout (assuming the collier has a sufficient stockpile) for any non-colliers within its own fleet (or sub-fleet). The collier will remove non-loadout missiles from the target ship while it has magazine space remaining, then add class loadout missiles to create space. Essentially, the collier will alternate loading and unloading as necessary to create the correct loadout.
+	
+	When this flag is set to Remove Fleet or Remove Sub-Fleet, the collier will unload all missiles from non-colliers within its own fleet (or sub-fleet), as long as it has space to store them.
+	
+	The current 'Provide Ordnance to Fleet' order has been replaced with several new orders to facilitate the above. These include:
+	\begin{itemize}
+		\item Join and Add Ordnance to Fleet
+		\item Join and Add Ordnance to Sub-Fleet
+		\item Join and Replace Ordnance in Fleet
+		\item Join and Replace Ordnance in Sub-Fleet
+		\item Join and Remove Ordnance from Fleet
+		\item Join and Remove Ordnance from Sub-Fleet
+	\end{itemize}
+	
+	The fleet containing the collier will become part of the target fleet and switch to an appropriate ordnance transfer status depending on the order. You can also use an 'Absorb' order to collect a collier with an existing status set. I may look at adding ship-level conditional orders (rather than fleet) so that colliers/tankers can detach when empty and return home without player supervision.
+	
+	A new 'Load from Ordnance Transfer Hub' order has been added. This order requires a second fleet containing at least one ordnance transfer hub as the destination. On arrival, any ships in the fleet with magazines will receive ordnance according to their class loadouts until all magazines are full, or the ordnance transfer hub runs out of ordnance. No ordnance will be removed by the hubs. All ships in the fleet will receive ordnance, including colliers. Once completed, the fleet will move on to its next order. If the fleet containing the ordnance transfer hub has any movement orders, the ordnance transfer will not take place and the ordnance transfer order will be marked as completed. Multiple hubs in the target fleet will not increase the rate of ordnance transfer but they can all contribute ordnance.
+	
+	A new 'Replace at Ordnance Transfer Hub' order has been added. This order functions in a similar way to above except that any ordnance not in the class loadout will be removed by the hubs. The mechanics of this process are the same as the ordnance transfer within fleets above.
+	
+	A new 'Unload to Ordnance Transfer Hub' order allows colliers to deliver ordnance to the hubs.
+	
+	The existing 'Load Ordnance from Colony' order will remain but can only be used at colonies that have either a Spaceport or an Ordnance Transfer Station. On arrival, the fleet will receive ordnance until all its magazines are full, or the colony runs out of appropriate ordnance. All ships in the fleet will be receive ordnance, including colliers. Once completed, the fleet will move on to its next order. Multiple spaceports or ordnance transfer stations at the colony will not increase the rate of ordnance transfer.
+	
+	The 'Unload Ordnance to Colony' order also remains but can only be used at colonies that have either a Spaceport or an Ordnance Transfer Station.
+	
+	Any order involving the transfer of ordnance to or from a colony or ordnance transfer hub will use the current racial ordnance transfer tech to determine the rate of transfer.
+	
+	Note this means that significantly more planning will be required in this version of Aurora to ensure missile-armed ships can be reloaded at the frontier. It will no longer be possible to dump ordnance on the nearest available rock. Colonies will require a spaceport or an ordnance transfer station before they can support missile-armed fleets. Alternatively, colliers can accompany fleets, or a deep space base with an ordnance transfer hub can be established.
+\end{document}

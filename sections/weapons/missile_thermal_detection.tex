@@ -1,0 +1,16 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\subsection{Missile thermal detection}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg103478#msg103478}{here}.
+	\\\\
+	
+	In VB6 Aurora, the thermal detection of missiles is based on the following formula:
+	\[ Thermal Signature VB6 = \frac{Missile Size}{20} * \frac{Speed}{1000} \]
+	
+	I have no idea why I coded thermal detection for missiles to be based on size, although I am sure it seemed like a good idea at the time :). For C\# Aurora, missiles will use the same formula as ships for thermal signature:
+	\[ Thermal Signature C\# = Max Engine Output * \frac{Current Speed}{Max Speed} * Thermal Reduction \]
+	
+	As missiles (for now anyway), don't have thermal reduction or an option to travel below maximum speed, their thermal signature is equal to the power of their engines. Combined with the changes to passive detection, this means that missiles in C\# Aurora will probably be detected by thermal sensors at much greater distances than in VB6 Aurora.
+\end{document}

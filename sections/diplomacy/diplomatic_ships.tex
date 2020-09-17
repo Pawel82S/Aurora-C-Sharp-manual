@@ -1,0 +1,18 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Diplomatic ships}\label{8_diplomatic_ships}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg120024#msg120024}{here}.
+	\\\\
+	
+	A Diplomatic ship is any ship equipped with a Diplomacy Module. These can be built by the player or by NPRs.
+	
+	Diplomacy Modules and therefore Diplomatic Ships are important for communication attempts and essential for basic diplomacy (influencing an alien race to view your race more positively). See section \ref{1_basic_framework} for more details.
+	
+	When a Diplomatic Ship is involved in diplomacy or communication attempts, the opposing race will know the origin of those messages. If the Diplomatic Ship is on opposing sensors, the identity of that ship will be noted in an event for the opposing race and its parent class will be flagged as a diplomatic vessel. If diplomacy is underway, the name of the Ambassador will also be passed to the opposing race.
+	
+	If the Diplomatic Ship is not on opposing sensors, the location of the signal from that ship will be communicated to the opposing race. This may be a system body, a jump point or simply a point in space.
+	
+	Any damage to NPR Diplomatic ships, regardless of whether the opposing race knows that status, will be treated as triple damage for the purposes for affecting diplomatic relations. If a diplomatic ship is attacked without an existing hostile relationship, the relationship will fall to -300 from the perspective of the owner of the ship (rather than the normal -100 for attacking when not hostile).
+\end{document}

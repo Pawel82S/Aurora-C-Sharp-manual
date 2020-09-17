@@ -1,0 +1,42 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Basic Framework}\label{1_basic_framework}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg118258#msg118258}{here}.
+	\\\\
+	
+	\textbf{Diplomacy module}\\
+	The Diplomacy Module is new for C\# Aurora and replaces Diplomatic Teams. It also affects communication attempts. The module is 30 HS, costs 300 BP and requires 50 crew. The minerals required are Corbomite, Mercassium and Vendarite. It is a starting technology in both TN and conventional starts.
+	
+	\textbf{Communication}\\
+	For communication checks to take place both sides must have ships and/or populations in the same system and both sides must be able to detect the other. Communication checks will only take place if both sides have a status of „Attempting Communication”. In other words, you can't translate their language if they refuse to talk to you. Diplomacy cannot take place until full communication is established. Alien races may take exception to your presence in this situation, based on a number of factors will be covered in a future post.
+	
+	For communication attempts, the highest Communication bonus of any commander of a ship with a Diplomacy module in one or more of the contact systems will boost any positive results achieved through the communication process (which is otherwise the same as VB6). If no Diplomacy module is present in any of the contact systems or the commander has no communication bonus, any positive gains toward full communication are halved.
+	
+	\textbf{Basic diplomacy}\\
+	Basic diplomacy follows similar principles to VB6 Aurora. Actions by each side generate positive or negative diplomatic points. As the total of diplomatic points goes above or below certain thresholds, high level treaties (trade, sharing of data, etc.) are put in place and the general level of cooperation changes (hostile, neutral, friendly, allied).
+	
+	The primary method of generating diplomatic points is via the Diplomacy module. The module must be located in a system where the target alien race has ships and/or populations and both sides must be able to detect the other. Diplomacy can only take place when full communication has been established. The highest Diplomacy bonus of any commander of a qualifying ship is used. The number of points generated per year is as follows:
+	
+	\[ Diplomacy Points = (Diplomacy Bonus * 4 + 1) * 100 * (1 - \frac{Target Racial Xenophobia}{100}) \]
+	
+	For example, an officer with 20\% Diplomacy trying to influence an alien race with Xenophobia of 40 would have the following calculation: \( (0.2 * 4 + 1) * 100 * 0.6 = 108 \) Points.
+	
+	If there is contact but no Diplomacy module in a contact system or the commander has no Diplomacy bonus, then no points are generated from this process (although other factors may generate points - covered in a future post).
+	
+	If there is no contact at all, even via civilian ships, then Diplomacy Points will move toward zero, from either direction. The annual rate of change is the Xenophobia of the viewing race when the starting point is positive and 100 – Xenophobia when the starting point is negative. For example, the view of a race with 25 Xenophobia will only fall 25 points when the starting point is positive but will rise by 75 points when the starting point is negative. Low Xenophobia races are quicker to forgive transgressions and vice versa.
+	
+	Existing treaties or diplomatic statuses will improve relationships over time. Different treaties have a base influence that is measured in diplomatic points per year multiplied by \( 1 - Racial Xenophobia / 100 \). For example, a trade treaty has a base influence of 100 diplomatic points per year. If two races have respective Racial Xenophobia of 30 and 60, then while a treaty is in place the view of the first race will improve by 70 diplomatic points per year while the view of the second ace will improve by 40. It takes longer to build trust with higher Xenophobia races.
+	
+	Trade, Geological and Gravitational treaties all have a base influence of 100. A research treaty has a base influence of 200. A diplomatic status of friendly has a base influence of 100, while a diplomatic status of allied has a base influence of 200.
+	
+	Positive and Negative diplomatic points will be gained through other events, many of which will be defined in future posts. An example of a negative impact is combat. Negative diplomatic points are suffered due to damage inflicted by an alien race using the following rules:\\
+	Each point of damage from a hit that only damages shields: 0.1\\
+	Each point of damage from a hit that causes armour damage but not internal: 0.25\\
+	Each point of damage from a hit that causes internal damage: 1.0\\
+	Each point of space-based damage to populations, ground forces or shipyards: 1.0\\
+	Each ton of ground forces destroyed in ground-based combat: 0.01\\
+	
+	If diplomatic relations are above the hostile level (-100), then even a single point of damage through combat will reduce relations to that point. However a period of mutual non-interaction following a small clash will probably return the diplomatic status to neutral. For example, if communications are established you may ask a survey ship to leave your system (mechanics in a future post). If that didn't work or you did not have communication, you can slightly damage that ship. An unarmed ship would retreat from hostile aliens and the immediate impact would be the alien race treating you as hostile. However, with no further combat in the short term, the status would soon return to a wary neutrality. Future communication and diplomacy would still be an option. Larger wars are harder to resolve but peace treaties will be covered in a future post.
+\end{document}

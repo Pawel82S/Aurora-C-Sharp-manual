@@ -1,0 +1,25 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{NPR vs. NPR claims}\label{4_npr_vs_npr_claims}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg118398#msg118398}{here}.
+	\\\\
+	
+	NPR vs NPR Diplomacy works as a combination of NPR vs Players and Player vs NPR.
+	
+	As described in section \ref{2_intrusion_into_npr}, when an NPR detects alien forces in a system that is claimed by the NPR, the NPR will issue a warning. When the target is a player this appears as an event message as per section \ref{2_intrusion_into_npr}. When the target is another NPR, the first NPR sets a protection status (in the same way as a player does in section \ref{3_claiming_npr_systems} that corresponds to the same demand level as it would send to a player.
+	
+	For example: An NPR detects an alien force in a system that it claims and decides this represent a threat level of 12. If the alien is a player, the NPR will send a message to the player that will appear as an event. The message will be on the lines of "We demand you leave" and that message will continue to be sent each construction phase. If the target is another NPR (let's call this NPR-B), then NPR-A will set a protection status of 'Demand Leave' instead.
+	
+	Next phase (or in some cases later in the same phase), NPR-B will see the withdrawal demand from NPR-A, just as it would see a similar demand from a player. It will react to that demand in exactly the same way except for one crucial difference; NPR-B will not reduce the diplomatic points for NPR-A.
+	
+	So why all the messing about with slightly different methods for Player vs NPR, NPR vs Player and NPR vs NPR? Because NPRs, even though they are much smarter in C\#, will still not have the human capability to make intuitive estimates weighing the strategic benefit of claiming a system claim vs the potential downsides of reduced diplomatic relations. This strategic deficit in AI vs human ability is handled by the different reactions to claims.
+	\begin{itemize}
+		\item Player vs NPR: The NPR will generally react negatively to being asked to leave a system, as that is a relatively easy to understand situation, and it can make a reasonable estimate of whether to abandon that system. The player does not react negatively to the NPR refusing to leave in game mechanics terms because the human player can make decisions himself about whether to treat the NPR differently. This also means that continual messages can be sent to remind the player without diplomatic penalties in-game.
+		\item NPR vs Player: The NPR will react negatively to player forces being in one of its systems, as that is also a relatively easy to understand situation. The negative impact is based on the importance of the system and the size of the player force. The player does not react negatively to the NPR asking him to leave in game mechanics terms because the human player can make decisions himself about whether to leave or treat the NPR differently.
+		\item NPR vs NPR: NPR-A will react negatively to NPR-B forces being in one of its systems, as that is also a relatively easy to understand situation. The negative impact is based on the importance of the system and the size of the NPR-B force. NPR-B will decide whether to leave the system but will not react negatively to being asked to do so. This allows the protection level to be reset each time without negative impact (so the NPR doesn't have to consider the huge variety of factors on when to make a new demand). Also, NPR-B may well regard the system as one of its own and will be making its own demand of NPR-A, in which case it will react negatively to a refusal from NPR-A.
+	\end{itemize}
+	
+	The difference is that the NPR is always faced with an immediate decision and does not have to consider wider implications. The player has the ability to take those wider implications into consideration and is free to make his own decisions on relationships. When NPRs do confront each other, either one will leave because the system is not important or they will start making demands of each other, which takes care of the dual negativity. I know it sounds complex, but I think it the best option to handle the different situations.
+\end{document}

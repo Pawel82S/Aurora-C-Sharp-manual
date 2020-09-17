@@ -1,0 +1,39 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+		\section{Independence}\label{6_independence}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg118467#msg118467}{here}.
+	\\\\
+	In C\#, you can declare a colony independent using a button on the Economics window. Colonies may also become independent in other situations, such as a rebellion following high unrest. Independence is far more complex than it first sounds, because the population will be under the control of a new race that is essentially a copy of the original race. The process is as follows:
+	\begin{itemize}
+		\item The title of the new race will be based on the name of the newly-independent population.
+		\item A new flag will be auto-selected and random naming themes chosen for classes, systems, etc.. Commander name themes will remain the same as the original race.
+		\item The ranks of the new race will copy the ranks of the original race.
+		\item Any ground forces at the population will be transferred to the new race.
+		\item It is possible that an NPR population can become independent, in which cases it will retain the same tech but create a new design philosophy.
+		\item The new race will start with an amount of wealth equal to \( Total Original Race Wealth * Independent Pop Size / Total Original Race Pop Size Before Independence \), which will be transferred from the original race.
+		\item The new race will start with a number of commanders equal to original race number of \( Commanders * Independent Pop Size / Total Original \) race pop size before independence). These are new commanders and not transferred from the original race.
+		\item A top-level admin command will be created at the population.
+	\end{itemize}
+	
+	
+	The new race will gain the following knowledge from the original race:
+	\begin{itemize}
+		\item The same galactic map, including map labels.
+		\item All geological and gravitational survey data.
+		\item All tech systems.
+		\item How to build all ship components and missiles.
+		\item All class designs.
+		\item All ground unit class designs.
+		\item All ground formation templates.
+		\item All intelligence data, including alien races, classes, ships, sensors, weapons, populations and ground forces.
+		\item A complete set of intelligence information on the original race which will be set up as a new alien race, with known systems, ships, etc.
+		\item Control Race flags on galactic map.
+		\item Protection Status settings for different combination of alien races and systems.
+		\item Locations of ruins, anomalies, wrecks, etc..
+		\item Event colours.
+	\end{itemize}
+	
+	For manual independence, any naval forces will have to be transferred using the Transfer Fleet option. In the case of a rebellion, some ships may be transferred automatically.
+\end{document}

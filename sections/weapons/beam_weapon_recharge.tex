@@ -1,0 +1,14 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\subsection{Beam weapon recharge}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg103586#msg103586}{here}.
+	\\\\
+	
+	In VB6, if a power plant is damaged, it slows down the recharge rate of all weapons by a proportionate amount.
+	
+	In C\# Aurora, power is allocated weapon by weapon until the available power is exhausted. This means that some weapons may not be recharged, but the others will be recharged at the maximum rate. Weapons are charged in order of ascending power requirement. Once a weapon is recharged, it will require no more power and other weapons can begin the recharge process.
+	
+	This should allocate power in the most effective way to keep a ship in the fight.
+\end{document}

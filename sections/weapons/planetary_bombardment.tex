@@ -1,0 +1,84 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\subsection{Planetary bombardment}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg107703#msg107703}{here}.
+	\\\\
+	
+	In C\# Aurora, populations can be attacked by missiles and energy weapons. However, because missile warheads are area-effect weapons, they are much more effective at destroying the civilian population and any installations.
+	
+	Each installation type has a Target Size. The chance of each attack (either a missile or a single energy weapon) destroying an installation is equal to: Weapon Damage / Target Size. For example, a construction factory has a Target Size of 20, so a 10cm laser fired from orbit would have a 15\% chance to destroy the target (3 / 20). For the purposes of this check, missile warheads are treated as equal to 20x warhead strength. Therefore, a single 1 point warhead has a 100\% chance to destroy a construction factory.
+	
+	A single energy weapon can destroy only one target per hit. A missile warhead is applied until all damage is used. For example, a 5-point missile warhead is counted as 100. If the first installation hit is a construction factory, that factory is destroyed and the remaining damage reduced to 80. That damage is then applied the next installation hit and so on.
+	
+	Missile warheads cause radiation and dust levels to increase by an amount equal to their warhead size. Energy weapons increase the dust level by 5\% of their damage amount.
+	
+	Missile warheads inflict civilian casualties at the rate of 100,000 per point of damage. Energy weapons inflict civilian casualties at the rate of 2,000 per point of damage.
+	
+	Populations will no longer surrender purely due to orbital bombardment. You have to land ground formations to force a surrender.
+	
+	Energy weapons now provide a way to destroy the industry and infrastructure of a target population, without causing radiation or using up ordnance. However, this will require considerable effort for a large population and consume maintenance supplies due to weapon failures. It will also bring you within range of any ground-based energy weapons. Of course, it will usually be more beneficial to conquer the planet and gain the installations instead of destroying them.
+	
+	\begin{center}
+		\begin{tabular}{|l|r|}
+			\hline
+			\textbf{Name} & \textbf{Target size} \\
+			\hline
+			Automated Mine & 20 \\
+			\hline
+			Cargo Shuttle Station & 200 \\
+			\hline
+			Civilian Mining Complex & 200 \\
+			\hline
+			Construction Factory & 20 \\
+			\hline
+			Conventional Industry & 20 \\
+			\hline
+			Deep Space Tracking Station & 40 \\
+			\hline
+			Fighter Factory & 20 \\
+			\hline
+			Financial Centre & 20 \\
+			\hline
+			Forced Labour Construction Camp & 80 \\
+			\hline
+			Forced Labour Mining Camp & 80 \\
+			\hline
+			Fuel Refinery & 20 \\
+			\hline
+			Genetic Modification Centre & 400 \\
+			\hline
+			Ground Force Training Facility & 400 \\
+			\hline
+			Infrastructure & 2 \\
+			\hline
+			Low Gravity Infrastructure & 2 \\
+			\hline
+			Maintenance Facility & 20 \\
+			\hline
+			Mass Driver & 20 \\
+			\hline
+			Military Academy & 400 \\
+			\hline
+			Mine & 20 \\
+			\hline
+			Naval Headqarters & 400 \\
+			\hline
+			Ordnance Factory & 20 \\
+			\hline
+			Ordnance Transfer Station & 200 \\
+			\hline
+			Refuelling Station & 200 \\
+			\hline
+			Research Lab & 400 \\
+			\hline
+			Sector Command & 400 \\
+			\hline
+			Spaceport & 1000 \\
+			\hline
+			Terraforming Installation & 100 \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{document}

@@ -1,73 +1,10 @@
-\documentclass[../Aurora C# unofficial manual.tex]{subfiles}
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
 
 \begin{document}
-	\subsection{Meson update}
-	Original post can be found
-	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg111663#msg111663}{here}.
-	\newline\newline
-	
-	Mesons have the following changes for C\# Aurora:
-	\begin{enumerate}
-		\item Their cost is based on the same principles as a laser, so mesons will cost the same as an equivalent laser of the same tech level.
-		\item Mesons penetrate shields as before but their ability to penetrate armour is now limited.
-		\item A new tech line exists, Meson Armour Retardation, which is the chance for each layer of armour to stop the meson. This starts at 50\%, then 40\%, 32\%, etc. finishing at 7\% for TL 12
-		\item If armour does stop the meson, it scores 1 point of damage on the armour.
-		\item If the meson hits a damaged armour location, it only has to penetrate the remaining armour in that location.
-		\item Mesons will destroy missiles without penalty, as missiles are no longer armoured in C\# Aurora.
-	\end{enumerate}
-	As with everything else, these changes are subject to play test.
-	
-	
-	\subsection{Turret update}
-	Original post can be found
-	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg103323#msg103323}{here}.
-	\newline\newline
-	
-	A minor update. The benefits of multiple energy weapons in turrets have been doubled. A twin turret now has a 20\% reduction in crew vs two solo weapons and has a 10\% reduction in gear size. A quad turret has a 40\% reduction in crew vs four solo weapons and has a 20\% reduction in gear size.
-	
-	In addition, I found an error in the VB6 code for turret design that meant a turret needed four times more armour than a ship of equivalent size. This has been corrected for C\# Aurora, which means armoured turrets are now much more viable.
-	
-	
-	\subsection{Beam weapon recharge}
-	Original post can be found
-	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg103586#msg103586}{here}.
-	\newline\newline
-	
-	In VB6, if a power plant is damaged, it slows down the recharge rate of all weapons by a proportionate amount.
-	
-	In C\# Aurora, power is allocated weapon by weapon until the available power is exhausted. This means that some weapons may not be recharged, but the others will be recharged at the maximum rate. Weapons are charged in order of ascending power requirement. Once a weapon is recharged, it will require no more power and other weapons can begin the recharge process.
-	
-	This should allocate power in the most effective way to keep a ship in the fight.
-	
-	
-	\subsection{Weapon failure}
-	Original post can be found
-	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg107701#msg107701}{here}.
-	\newline\newline
-	
-	
-	At the point when any weapon (energy-based or missile launcher) fires, there is a 1\% chance the weapon will suffer a failure. If sufficient maintenance supplies are available, the weapon will be instantly repaired and will fire normally. If maintenance supplies are not available, the weapon will be damaged and unable to fire.
-	
-	This is partially to simulate the stress of combat on weapon systems, but also as a balance to other rule changes.
-	
-	
-	\subsection{Plasma carronades}
-	Original post can be found
-	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg102669#msg102669}{here}.
-	\newline\newline
-	
-	
-	\begin{enumerate}
-		\item The development cost of Plasma Carronade focal size has been halved. For example, a 30cm Carronade is now 4000 RP.
-		\item The building cost of Carronades has also been halved.
-	\end{enumerate}
-	These two changes should make Carronades more viable. A powerful and inexpensive weapon but very short-ranged.
-	
-	
 	\subsection{Particle lance}
 	Original post can be found
 	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg102678#msg102678}{here}.
-	\newline\newline
+	\\\\
 	
 	This is a copy of a post in the VB6 7.2 Changes List. I didn't release the updated VB6 version so this is still a change from the released VB6 Aurora.
 	

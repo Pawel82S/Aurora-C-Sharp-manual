@@ -1,0 +1,46 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\subsection{Missile launcher changes}\label{missile_launcher_changes}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg102815#msg102815}{here}.
+	\\\\
+	
+	Missile Launchers have undergone significant changes in C\# Aurora.
+	\begin{enumerate}
+		\item Fractional-size launchers can be created. The minimum is still 1 HS but a launcher can now be 1.1 HS, 2.7 HS, etc.
+		\item The reduced-size launcher techs are all available immediately and do not need to be researched. This means box launchers are available from the start. The progression for reduced size launchers has been altered slightly:
+		
+		\begin{center}
+			\begin{tabular}{|r|l|}
+				\hline
+				0.75 HS & 2x Reload \\
+				\hline
+				0.6 HS & 5x Reload \\
+				\hline
+				0.4 HS & 20x Reload \\
+				\hline
+				0.3 HS & 100x Reload \\
+				\hline
+				0.15 HS & 100x Reload (Box Launcher)\footnotemark \\
+				\hline
+			\end{tabular}
+			\footnotetext[3]{Note that reload for this was x15 in VB6}
+		\end{center}
+	\end{enumerate}
+	
+	If a box launcher containing a missile is damaged, the missile will explode. The chance of this happening can be reduced by a new tech line. The first step reduces the explosion chance to 70\% for 1000 RP and the last step reduces to 5\% for 120,000 RP. In addition, Box launchers can only be reloaded in a hangar, or at an Ordnance Transfer Point (a Spaceport, Ordnance Transfer Station or Ordnance Transfer Hub). Reloading at an Ordnance Transfer Point is 10x slower than in a hangar (similar to the penalty for maintenance facilities in VB6 Aurora).
+	
+	The base reload rate for all missile launchers is now:
+	\[ Missile Reload Rate = \frac{\sqrt{Missile Size} * 30 seconds * Reduced Size Modifier}{Reload Rate Tech} \]
+	
+	Assuming a race has reload rate tech of 3, a normal size 1 launcher will reload in 10 seconds, a size 4 will reload in 20 seconds and a size 9 will reload in 30 seconds. This change will dramatically reduce reload times for larger launchers.
+	
+	The change for box launcher reload rate from x15 to x100 is not as dramatic as it seems for larger missiles due to the new reduced reload times for larger missiles. However, it is still an significant increase from VB6. A size 4 missile mounted on a box launcher will now take about 1h 40m to reload in a hangar and about 17 hours for an ordnance transfer point. A size 6 is about 2 hours and 20 hours respectively.
+	
+	These changes are intended to:
+	\begin{enumerate}
+		\item Reduce the disadvantage of larger missiles
+		\item Remove the realism issue of not having box launchers available at low tech yet make box launchers a more difficult decision vs standard-type launchers
+	\end{enumerate}
+\end{document}
