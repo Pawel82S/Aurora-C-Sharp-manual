@@ -1,0 +1,15 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Ground forces detection}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg110371#msg110371}{here}.
+	\\\\
+	
+	n C\#, as in VB6, ground forces are treated as size-1 for the purposes of detection, so are best detected with resolution-1 sensors.
+	
+	For C\#, the ground forces signature is equal to the total signature of all ground formation elements on a planet, divided by 100.
+	\[ Signature Of Each Element = \frac{Unit Size * Unit Number}{Fortification Level * Dominant Terrain Fortification Modifier} \]
+	
+	In other words, well-fortified ground forces will have a smaller signature than those out in the open, so you won't always know if you face a small force, or a well-fortified larger force.
+\end{document}

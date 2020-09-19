@@ -1,0 +1,25 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Ground combat events}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg116159#msg116159}{here}.
+	\\\\
+	
+	Ground combat in C\# is very detailed with many things happening in each combat round. There are a number of new events at varying levels of detail to serve as combat reports. Note that a formation (such as an Imperial Guard Regiment) consists of several formation elements, each containing one or more units of a single ground unit class.
+	\begin{enumerate}
+		\item Element vs GUC: This is the most granular and reports the results of attacks from one formation element against one type of hostile ground unit class, providing number of shots, hits, armour penetrations and kills. If a formation element engages in combat against five types of enemies, that element will have five Element vs GUC reports
+		\item Ship vs GUC. This is similar to the above and reports the results of attacks from a single ship against one type of hostile ground unit class, providing number of shots, hits, armour penetrations and kills. If a ship attacks five types of enemies, that ship will have five Ship vs GUC reports
+		\item GUC vs GUC Summary: A summary of the results of attacks from one type friendly ground unit class against one type of hostile ground unit class, providing number of shots, hits, armour penetrations and kills. For example, if there are five friendly types of ground unit class, each of which attack five types of hostile ground unit class, there will be twenty-five reports of this type. This is useful if you want to see how well certain types match-up - are your AT Guns able to knock out hostile tanks for example.
+		\item Attack vs GUC Summary:  A summary of the results of attacks from all friendly ground forces against one type of hostile ground unit class, providing number of shots, hits, armour penetrations and kills. For example, if six types of hostile types of ground unit class have been attacked by ground forces there will be six reports of this type.
+		\item Orbital vs GUC Summary:  A summary of the results of attacks from all friendly ships against one type of hostile ground unit class, providing number of shots, hits, armour penetrations and kills. For example, if six types of hostile types of ground unit class have been attacked by ships there will be six reports of this type.
+		\item Formation Attack Summary: A list of the type and number of hostile units destroyed by a specific friendly formation
+		\item Ground Attack Summary: A list of the type and number of hostile units destroyed by all friendly surface and orbit forces
+		\item Element Loss Summary: Reports the results of enemy attacks against a single friendly formation element, providing number of shots, hits, armour penetrations and kills.
+		\item Formation Loss Summary: A list of the type and number of friendly units lost in a specific formation
+		\item Ground Defence Summary: A list of the type and number of friendly units in all formations destroyed by all hostile forces
+		\item Breakthrough Achieved: Reports that a specific formation achieved a breakthrough
+	\end{enumerate}
+
+	There may be other events as a result of more play-testing. The above may be too granular for some players so you can filter out the events you don't want to see, or you can see very granular detail for role-playing and AAR purposes.
+\end{document}

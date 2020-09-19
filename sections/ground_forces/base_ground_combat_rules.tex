@@ -1,0 +1,54 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Base ground combat rules}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg109786#msg109786}{here}.
+	\\\\
+	
+	Ground combat is conducted after the naval combat phase of each increment. One combat round will be performed for every eight hours that passed in the increment. Combat potentially takes place on any system body where populations exist from two or more hostile powers. If only one side has ground forces present, there may be a conquest (rules and code TBD). If ground forces are present from two or more hostile powers, ground combat will take place.
+	
+	Ground forces can be assigned one of four field positions; front line attack, front line defence, support and rear echelon. Units in support and rear echelon positions cannot directly attack hostile forces but if they possess elements with bombardment weapons they may be assigned to support a front line formation. Support and rear echelon formations can also potentially provide anti-air cover (more in a rules post on ground-space interaction) and supply to front line units. Only formations with all elements supplied can be placed in front line attack mode. Formations placed in front line attack mode lose any fortification bonus.
+	
+	Each race involved in a combat on a system body creates a list of its own formations on that system body (even if in multiple populations), plus a list of hostile alien formations, even if they are from multiple alien races in multiple populations. Hostile formations are checked for their weighted size.  This is based on actual size for front line size, 25\% for support and 5\% for rear-echelon. Each hostile formation is given a range for potential selection, based on its weighted size.
+	
+	Each front line friendly formation randomly targets a hostile formation. Friendly units with front line defence can target hostile front line formations. Friendly units with front line attack can target any hostile formation, although support and rear echelon are less likely given their smaller weighted size. In fact, the more formations that are pushed into front line positions, the less likely it is that rear areas will be attacked.
+	
+	Support and Rear Echelon formations that contain formation elements with bombardment weapons can be assigned to support front line formations that are part of the same organisation. Formations in a support position with light bombardment weapons will fire with the front line formations (see next paragraph). Formations in a support position with medium/heavy bombardment weapons or formations in a rear echelon position with heavy bombardment weapons will fire in a subsequent phase - see below.
+	
+	Once a front line formation (or a light bombardment element in the Support position) has been matched against a hostile formation, each friendly individual unit (a soldier or vehicle) in that formation engages a random element in the hostile formation, with the randomisation based on the relative size of the hostile formation elements. The targeting on an individual unit level represents that the different elements in a front line formation will generally be attacking in conjunction (infantry supporting tanks, etc.).
+	
+	Once all front line attacks have been concluded, each unit in each element providing supporting bombardment will engage either the hostile formation being targeted by the friendly formation they are supporting, or one of the hostile formation's own supporting elements (counter-battery fire). If the hostile formation is targeted, each unit in the supporting artillery element engages a random element in the hostile formation, with the randomisation based on the relative size of the hostile formation elements (the same as front-line vs front-line). If a hostile supporting element is targeted, all fire is directed against that element. This represents the difference between providing supporting fire in a combined arms front-line battle and targeting specific hostile artillery for counter-battery fire. The decision to target the hostile front-line formation vs hostile support elements is based on the relative sizes.
+	
+	Supporting medium artillery will choose between hostile forces in Front-Line or Support field positions (and will ignore any elements in Rear Echelon field position for purposes of relative size), while heavy artillery can select targets in any field position. In other words, if the enemy has supporting heavy artillery in a rear echelon position, you will only be able to target those elements with your own heavy artillery (or ground support fighters, or orbital bombardment support).
+	
+	Once all the initial combat is complete, there is a chance for a breakthrough. Each defending formation is checked according to the following procedure:
+	\begin{enumerate}
+		\item A Cohesion Damage value is determined for each formation element using the following formula: \( Element Class Size * Units Destroyed in Combat Phase * 100 / Element Morale \)
+		\item The total Cohesion Damage is summed for all elements in the formation and compared to the formation size. This value, from 0 to 100\%, is the Formation Cohesion Rating
+		\item For each front line formation that attacked the defending formation, a Breakthrough Value is determined for each formation element
+		\item Static elements have zero Breakthrough Value. Vehicle elements use the following formula: \( Element Class Size * Element Units * Element Morale / 100 \). Infantry elements use the same formula as vehicles with a further modifier of 0.5.
+		\item The total Breakthrough Value is summed for all elements in the attacking formation and compared to the formation size. The value is multiplied by 2 if the formation has a field position of Front Line Attack. This value, from 0 to 200\%, is the Formation Breakthrough Rating
+		\item A Breakthrough Potential value is determined for the attacking formation by multiplying the defending Formation Cohesion Rating by the attacking Formation Breakthrough Rating. If this value is equal to or greater than 30\%, a breakthrough has occurred for that attacking formation.
+		\item Each formation that creates a breakthrough mounts a second attack. This attack does not benefit from supporting artillery or fighter support. However, it functions as if the attacking formation has a field position of Front Line Attack, which means all hostile formations are potential targets, not just those on the front line.
+	\end{enumerate}
+	
+	The breakthrough rules mean that defending formations that suffer casualties may allow attacking formations to penetrate their lines and conduct a second attack. This is more likely under the following circumstances: A single defending formation is attacked by multiple attacking formations, the defender suffers a high casualty percentage in a single ground combat round (potentially because the formation is small in size), the defender suffers disproportionate casualties to elements with larger unit classes, the defender is low morale, the attacker is primarily vehicle-based, the attacker is on front-line attack, the attacker is high morale.
+	
+	When a formation element is engaged in combat against a hostile formation element, supply is checked. If supply is not available, the number of units firing will be 25\% of normal. Each attacking unit uses the following process:
+	\begin{enumerate}
+		\item The To Hit Chance is determined. The base chance is 20\% multiplied by the 'Dominant Terrain To Hit Modifier', the firing element morale / 100 and, if the target is not fortified, the base to hit chance for the target element unit class.
+		\item The Fortification Modifier for the target element is determined, which is the current fortification level of the target multiplied by the 'Dominant Terrain Fortification Modifier'. If the target is not fortified, the Fortification Modifier is 1.
+		\item The Environment Modifier is calculated, taking into account gravity, pressure and temperature and whether the firing element has capabilities in those environments. Each environment for which the element is not trained has a x2 modifier.
+		\item The Terrain Capability Modifier is calculated. If the element is trained to fight in the dominant terrain, the modifier is 0.5.
+		\item The Final Chance to Hit is calculated as \( To Hit Chance / Fortification Modifier * Environment Modifier * Terrain Capability Modifier \)
+		\item The unit fires each weapon it has (except for non-bombardment weapons on units bombarding from support and rear-echelon field positions). If the to-hit roll is equal or less than the final chance to hit, the weapon has struck the target.
+		\item If a hit is scored, the armour-piercing (AP) value of the weapon is checked against the armour of the target. If AP is equal or greater than armour, the shot has penetrated. If AP is less than armour, the percentage chance to penetrate armour is \( (AP / Armour)^{2} \).
+		\item If the shot penetrates armour, the percentage chance of destroying the target is equal to\\ \( (Weapon Damage / Target Hit Points)^{2} \).
+		\item If a target is destroyed, the firing element gains morale and the target element suffers a loss of morale. This morale gain/loss is doubled if the firing unit is in front-line attack mode.
+	\end{enumerate}
+
+	All combat is conducted simultaneously and losses are applied once all firing is completed. Because of the way the above is structured, multi-way conflicts with multiple races on each side are possible.
+	
+	I will post separately on how spacecraft interact with ground combat.
+\end{document}

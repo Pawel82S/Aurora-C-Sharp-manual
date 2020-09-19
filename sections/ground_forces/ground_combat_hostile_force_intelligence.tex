@@ -1,0 +1,18 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Ground combat hostile force intelligence}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg117706#msg117706}{here}.
+	\\\\
+	
+	I've already posted the rules regarding how you learn about the different classes of hostile ground units in section \ref{alien_ground_unit_intelligence}.
+	
+	This post covers intelligence regarding the size and composition of the hostile force in a given ground combat zone. After each combat round, an update is provided on the estimated hostile force. The estimate becomes more accurate as time passes. For each type of hostile ground unit om the combat zone, the following process is used:
+	
+	\[ Intel Error Range = \frac{200}{Number of Combat Rounds} \]
+	\[ Intel Error = 1 + \frac{Random (Intel Error Range)}{100} \]
+	50\% of the time, the actual number of alien units is multipled by the Intel Error and 50\% of the time the actual number of alien units is divided by the Intel Error.
+	
+	For example, if there are 1000 units of a particular alien class, the intelligence following the second combat round could indicate between 500 and 2000 units. After 10 combat rounds, the intelligence reporting range will be 833 to 1200 units.
+\end{document}

@@ -1,0 +1,26 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Naval bombardment of ground forces in naval combat phase}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg111435#msg111435}{here}.
+	\\\\
+	
+	Ground forces can be bombarded by naval forces as part of normal naval combat. Note this is not the same as Orbital Bombardment Support, which involves ships in orbit working in conjunction with ground forces to deliver precision energy weapon strike like described in section \ref{orbital_bombardment_support}.
+	
+	Instead, Naval Bombardment of Ground Forces (NBG) is a mass bombardment of ground-based sensor contacts using either missile weapons or energy weapons, which does not require friendly ground forces on the target body or fire direction support and is an adjunct to Planetary Bombardment (see section \ref{planetary_bombardment})
+	
+	For the purposes of bombarding ground forces, each weapon type on each ship is treated separately for targeting purposes. For example, a ship with both 10cm and 15cm railguns would make two separate rolls to select a target formation, one for each weapon type, and therefore target all weapons of the same type on the same formation. Target formations are selected based on a weighted random roll, with the weighting based on formation size. Once a formation is selected as a target, each shot against that formation selects a random element within the formation, again using a weighted random roll.
+	
+	Ship using energy weapons for NBG have one third of the chance to hit compared to using Orbital Bombardment Support (as in the latter case they are being directed by FFD units) and do not benefit from any ground support bonus from the ship commander or tactical officer. Their to-hit chance is the base ground combat to hit chance (20\%), reduced by two thirds, multiplied by the to-hit modifier of the planet's dominant terrain and divided by both the fortification of the target formation elements the and fortification modifiers of the planet's dominant terrain. In summary, blind-firing energy weapons at general concentrations of enemy forces is not a very effective way of destroying them, especially in difficult terrain, although it can be done given sufficient patience and maintenance supplies. When firing at Detected STO units, the two-third reduction in to-hit chance is not applied, as the STO units have given away their general location.
+	
+	Ships using missiles for NBG have a 100\% base chance to strike their targets, as nuclear warheads require considerably less precision than energy weapons, and may hit multiple targets. This is modified by the to-hit modifier of the planet's dominant terrain and divided by both the fortification of the target formation elements and the fortification modifier of the planet's dominant terrain. One attack is made with the missile's full warhead damage. Two attacks are made with one half damage, four attacks with one quarter damage etc. This division continues while the damage is higher than 1 point of warhead strength. Each of these attacks can also hit multiple smaller targets, such as infantry. The number of sub-attacks is equal to 50 / target size.
+	
+	This means that a single 8 point missile warhead targeted on infantry will make 15 attacks \( (1 + 2 + 4 + 8) \) and each attack will be directed against 10 units, for a total of 150 infantry attacked. However, bear in mind that if the infantry are fortified normally that will reduce the normal 100\% chance to hit by a third. If they have help from construction units and are in difficult terrain such as mountains, the chance to hit could be much lower so many of them could survive the attack. Missiles also cause environmental damage so if you plan to use the planet afterwards, this may not be the best approach.
+	
+	The ground combat damage for an naval weapon is equal to 20x the square root of the damage at the same range in ship-to-ship combat. Armour penetration is equal to half the that damage. Fractions are retained. For example, the AP/Damage ratings would be 10/20 for a 10cm railgun round or gauss cannon, 17.3/34.6 for a 10cm laser, 30/60 for a 9-point missile warhead, 40/80 for a 25cm laser. Weapons roll for failure in the same way as in naval combat.
+	
+	Any weapon used for NBG has the same environmental impact as it would for planetary bombardment. Missile warheads cause radiation and dust levels to increase by an amount equal to their warhead size. Energy weapons increase the dust level by 5\% of their damage amount and have no effect on radiation.
+	
+	Each NBG shot has a one third chance to also strike the population itself, inflicting installation damage and population losses accordingly (see section \ref{planetary_bombardment}). Conversely, each energy weapon or missile used for general Planetary Bombardment attack has a one third chance to also attack any ground forces on the planet (using the above rules), regardless of whether those ground forces have been detected. Note that all the to hit modifiers vs ground still apply so the chance of accidentally hitting any ground unit with an energy weapon for example is still very low.
+\end{document}

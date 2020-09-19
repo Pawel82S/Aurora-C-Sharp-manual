@@ -1,0 +1,40 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Ground force fortification}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg110539#msg110539}{here}.
+	\\\\
+	
+	Fortification happens at the element level. Formation elements can fortify to different levels, depending on the base type of the unit class. That level is also affected by whether the element is restricted to fortifying itself or if it has assistance from construction vehicles. The level of self-fortification and maximum fortification is as follows:\\
+	Infantry, Static: Self 3, Max 6.\\
+	Light vehicle, Medium Vehicle, Heavy Vehicle: Self 2, Max 3.\\
+	Super-Heavy Vehicle: Self 1.5, Max 2\\
+	Ultra-Heavy Vehicle: Self 1.25, Max 1.5
+	
+	All elements move from non-fortified to their maximum self-fortification level in 30 days without outside assistance. This progress is linear and happens automatically for all formation elements when their parent formation is not set to front line attack.
+	
+	Construction elements will work on any element in their own formation or that formation's subordinate hierarchy that has already reached its max self-fortification level. If the construction element's formation has no subordinate, the Construction elements will work on any element in their own formation's parent formation or in that parent formation's subordinate hierarchy that has already reached its max self-fortification level. This means you can attach a construction-based formation directly to a formation you need fortified, or you can attach to a HQ and it will fortify every formation descending from that HQ. Construction elements can only assist elements that are on the same system body (they can be in different populations on the same body).
+	
+	Given sufficient capacity (see below), a construction element can fortify any other element from its maximum self-fortification level to the maximum fortification level in 90 days.
+	
+	The capacity of a construction element is equal to the construction rating of the elements unit class * number of units * race construction rating * commander production bonus * 100 tons. For example, a formation of 50 construction vehicles, each with 0.1 construction rating (2 const components at 0.05) for a race with 16 construction which is part of a formation with commander with 10\% production bonus would be: \( 0.1 * 50 * 16 * 1.1 * 100 = 8800 \) tons. BTW a construction battalion of this type would cost 636 BP to build.
+	
+	All construction elements are ordered by descending order of construction capacity. Each one determines the list of elements that they can assist (using the above criteria), excluding any that have been assisted by a previous construction element. The list of target element is ordered by Construction Rating (so construction units fortify themselves last), then descending tracking speed (so point defence STO and then normal STO), then by field position (so front line defence, then support, then rear echelon), then by descending max fortification (so infantry, static first), then by descending cost (elements with more expensive units first), then by descending morale.
+	
+	The construction element cycles through the list of target elements using the following process:
+	\begin{enumerate}
+		\item The total size of the target element is determined \( Element Unit Size * Number Of Units \)
+		\item This is compared to the remaining construction capacity of the construction element. If its is greater, then the remaining construction capacity of the construction element is reduced by the size of the target element. If it is less, remaining construction capacity is reduced the zero and a Size Vs Capacity Modifier equal to \( Remaining Construction Capacity / Target Element Size \) is applied below
+		\item The amount of fortification that could be accomplished in ninety days is determined by deducting the target element self-fortification level from the target element max fortification level
+		\item The amount of fortification that could be accomplished within the current period is determined by \( 90 Day Fortification Amount * Current Period / 90 Days * Size \) Vs Capacity Modifier
+		\item The fortification for the current period is applied. If this would surpass the target element maximum fortification, then that value is set instead
+		\item If the construction element has capacity remaining, it moves on to the next target element in its list
+	\end{enumerate}
+
+	Note that because of the way this is applied, it will take the same amount of time to move infantry from fortification level 3 to level 6 as it does for armour from 2 to 3.
+	
+	This process will allow the player to either directly manage construction elements by attaching their formation to the desired target formation, or to attach the formation to a high level HQ and have the process happen automatically. If a construction element is used to fortify other elements, it will not contribute its construction capacity to its parent population during the next construction phase.
+	
+	In combat, if the fortification level of a formation element is greater than 1, it is multiplied by the fortification bonus of the dominant terrain.
+\end{document}

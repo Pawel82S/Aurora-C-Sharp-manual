@@ -1,0 +1,25 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Ground-based AA fire}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg109914#msg109914}{here}.
+	\\\\
+	
+	AA units take part in ground combat normally, using their ground combat values. If an AA unit takes part in both ground-ground and ground-air combat, it will draw supply twice.
+	
+	Once all direct combat, bombardment support and ground support fire has been resolved, but before damage is allocated, all AA units will be checked to see if they can fire on hostile aircraft, using the following rules:
+	\begin{enumerate}
+		\item All AA units in a formation that was directly attacked by aircraft will each select a random aircraft from those that attacked that formation.
+		\item Medium or Heavy AA units in a formation that was not directly attacked by aircraft but is the direct parent of a formation that was attacked will each select a random aircraft from those that are attacking the subordinate formations.
+		\item Heavy AA units that are not included in the two categories above will fire on a random hostile aircraft, including those on CAP that are not directly engaged in attacking ground units.
+	\end{enumerate}
+	
+	An Environment Modifier is calculated, taking into account gravity, pressure and temperature and whether the firing AA unit has capabilities in those environments. Each environment for which the element is not trained has a x2 modifier. There are no terrain modifiers.
+	
+	\[ Chance To Hit = 10\% * \frac{Tracking Speed}{Aircraft Speed} * \frac{Morale}{100 * Environment Modifier} \]
+	
+	If a hit is scored, the damage vs the fighter is \( (Ground Damage Value / 20)^{2} \) rounded down. For example, an AA unit with a ground damage value of 40 would have AA Damage of \( (40 / 20)^{2} = 4 \).
+	
+	All AA damage is applied after all attacks have been resolved.
+\end{document}

@@ -13,22 +13,23 @@ Ground Combat Events (X)
 Ground Combat Hostile Force Intelligence (X)
 Ground Commander Bonuses (X)
 Ground Force Fortification (X)
-Ground Force Logistics
-Ground Forces Construction Complex
-Ground Forces Detection
-Ground Forces Replacements
-Ground Forces Text Summary
-Ground Formation Element Transfer UI
-Ground Support Bonus
-Ground Support Fighters
-Ground-based AA Fire
-Ground-based Geological Survey
-Ground-based Xenoarchaeology
-Naval Bombardment of Ground Forces in Naval Combat Phase
-Queued Ground Formation Training Tasks
-Setting Ground Formation Support
-Surface to Orbit Ground Forces Contact
-Surface-to-Orbit Weapons
+Ground Force Logistics (X)
+Ground Forces Construction Complex (X)
+Ground Forces Detection (X)
+Ground Forces Replacements (X)
+Ground Forces Text Summary (X)
+Ground Formation Element Transfer UI (X)
+Ground Support Bonus (X)
+Ground Support Fighters (X)
+Ground-based AA Fire (X)
+Ground-based Geological Survey (X)
+Ground-based Xenoarchaeology (X)
+Naval Bombardment of Ground Forces in Naval Combat Phase (X)
+Orbital Bombardment Support (X)
+Queued Ground Formation Training Tasks (X)
+Setting Ground Formation Support (X)
+Surface to Orbit Ground Forces Contact (X)
+Surface-to-Orbit Weapons (X)
 
 
 =======================================================================

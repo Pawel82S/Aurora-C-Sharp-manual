@@ -1,0 +1,22 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Orbital bombardment support}\label{orbital_bombardment_support}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg110310#msg110310}{here}.
+	\\\\
+	
+	Ships equipped with energy weapons can provide support to ground unit formations during ground combat.
+	
+	To be eligible, a fleet with energy weapons is given an order to "Provide Orbital Bombardment Support" with a friendly population as the destination. This order functions in a similar way to a 'Follow' order, with the order remaining in place until removed by the player. On the Ground Combat Window, eligible fleets (those in orbit and with this order) appear under their own section of the tree view for each population, with a parent node of "Orbital Bombardment Support". The ships in those fleets can be dragged and dropped on to formations in the same way as ground support fighters. Fleets with this order can still be targeted in normal naval combat or by STO weapons (they do not have the same protection as fighters on ground support missions).
+	
+	In combat, the orbital bombardment ships attack at the same time as bombardment elements and have the same target selection options as heavy bombardment. Orbital bombardment ships have the same chance to hit as ground units, although they are not affected by any negative environmental modifiers (such as high gravity or extreme temperatures). Each ship fires its weapons once per ground combat phase. Each ship's to hit chance is affected by its crew grade and morale, plus 100\% of the ground support bonus of the tactical officer and 50\% of the ground support bonus of the ships commander.
+	
+	The damage in ground combat for an energy weapon is equal to 20x the square root of its point blank damage in ship-to-ship combat. Armour penetration is equal to half the damage. Fractions are retained. For example, the AP/Damage ratings would be 10/20 for a 10cm railgun round or gauss cannon, 17.3/34.6 for a 10cm laser, 40/80 for a 25cm laser. Weapons roll for failure in the same way as in naval combat.
+	
+	Ships cannot perform orbital bombardment in the ground combat phase if they fired in the preceding naval combat phase of the same increment.
+	
+	Each Forward Fire Direction (FFD) component in a formation allows support from a single ship in orbit or up to six ground support fighters. If a ship is providing orbital bombardment support and the formation loses its FFD capability, the ship will try to find another formation at the same population with available FFD.
+	
+	Orbital bombardment is a powerful aid to any ground combat, although the ships will be vulnerable to hostile STO weapons and require fire direction from the surface. Ships conducting Orbital Bombardment Support will be firing far less than often than a ship conducting general planetary bombardment, but will do so with more accuracy. This is because the ship will be firing on specific targets as directed by ground-based controllers when the right opportunity arises.	
+\end{document}

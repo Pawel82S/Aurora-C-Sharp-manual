@@ -1,0 +1,36 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Ground commander bonuses}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg110196#msg110196}{here}.
+	\\\\
+	
+	Ground force commanders have a much greater variety of bonuses in C\# Aurora. The most straightforward are:
+	\begin{itemize}
+		\item Ground Combat Defence (GCD): When elements of a formation are fortified, their fortification level is increased by the formation commander defence bonus
+		\item Ground Combat Offence (GCO): Increases the to-hit chance of all direct-fire weapons in the formation
+		\item Ground Combat Artillery (GCA): Increases the to-hit chance of all indirect-fire weapons in the formation
+		\item Ground Combat Anti-Aircraft (GCAA): Increases the to-hit chance of all anti-aircraft weapons in the formation
+		\item Ground Combat Logistics (GCL): Represents the chance that a formation element will not draw supply during a combat round.
+		\item Ground Combat Manoeuvre (GCM): Increases the chance that a formation will make a breakthrough in combat
+		\item Ground Combat Occupation (OCC): Boosts the occupation strength of a formation
+		\item Survey (SURV): Increases the output of geosurvey modules in ground units
+		\item Production (PROD): Increases the output of construction modules in ground units
+		\item Xenoarchaeology (XEN): Increases the chance of successfully recovering abandoned installations
+	\end{itemize}
+
+	In addition to the above, each ground commander has a 'Ground Combat Command' rating, which represents the size of the formation he can effectively command. This rating is given a relatively high score for promotional purposes so officers with high command ratings will tend to progress though the ranks.
+	
+	If an officer is commanding a formation that is larger than his command rating, the effectiveness of his other bonuses will be reduced by \( Command Rating / Formation Size \). For example, an officer with a 20\% defence bonus and a command rating of 5000 is commanding a regiment with a size of 7000. The defence bonus is reduced to 14.3\%. In addition, if the largest HQ in a formation has a rating less than the formation size, the effectiveness of the formation commander's bonuses will be reduced by \( HQ rating / Formation Size \). These penalties (command rating and HQ rating) are cumulative. Note that if all HQ capacity in a formation is eliminated, no commander bonuses will apply.
+	
+	Finally, ground forces officers have a Ground Combat Training bonus, which affects morale. Each construction phase, any formation element with less than 100 morale will regain that morale at a rate of 100 per year, plus the commander training bonus (so a 20\% bonus would increase morale recovery to 120 per year). Formation elements can continue to improve morale above 100, using the following process:
+	\begin{enumerate}
+		\item The training bonus percentage (after any reduction for command rating and HQ rating penalties) is converted into a morale bonus at 1\% = 1 morale point (so 10\% training bonus = 10 morale bonus).
+		\item Maximum formation element morale is 100 plus 5x the morale bonus
+		\item Formation element morale increases at a rate equal to the morale bonus per year multiplied by the 'Morale Gain Modifier'
+		\item The 'Morale Gain Modifier' is calculated as \( 1 - ((Element Morale - 100) / (Maximum Morale - 100)) \)
+	\end{enumerate}
+
+	For example, a formation element has 140 morale and the commander of the parent formation has a Ground Combat Training bonus of 30\%. However, he is commanding a formation that is slightly too large for his Ground Combat Command rating, so he has a Command Modifier of 0.8. The training bonus is 24\% (30\% x 0.8), which converts to a morale bonus of 24. The maximum morale for the formation is therefore \( (100 + (5 x 24)) = 220 \). The morale gain modifier is \( 1 - ((140-100) / (220 - 100)) = 0.667 \). Therefore, the formation will gain morale at \( 24 * 0.667 = 16 \) points per year.
+\end{document}

@@ -1,0 +1,16 @@
+\documentclass[../../Aurora C# unofficial manual.tex]{subfiles}
+
+\begin{document}
+	\section{Surface-to-Orbit ground forces contact}
+	Original post can be found
+	\href{http://aurora2.pentarch.org/index.php?topic=8495.msg110505#msg110505}{here}.
+	\\\\
+	
+	STO elements that have not fired are detected with other ground forces as a ground forces contact.
+	
+	When an STO element fires, any races that are currently detecting it as part of normal ground forces will flag it as an STO element. Thereafter, those races will detect that element as an 'STO Ground Forces' contact, which is a new contact type. All known STO elements on a planet are grouped as a single STO Ground Forces contact. Players can choose to target either the known STO elements or the normal ground forces (which may contain undetected STO elements).
+	
+	An STO element may be known to some races and detected accordingly, while still being part of the normal ground forces contact for other races.
+	
+	The active sensors of STO elements are detected by EM sensors in the same way as any other active sensor. However, this is not sufficient to flag the STO element.
+\end{document}
